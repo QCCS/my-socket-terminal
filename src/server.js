@@ -3,10 +3,10 @@
  */
 // 加载node上websocket模块 ws;
 var ws = require("ws");
-var cmd = require('node-cmd')
+var cmd = require('node-cmd');
 // 启动基于websocket的服务器,监听我们的客户端接入进来。
 var server = new ws.Server({
-    host: "127.0.0.1",
+    // host: "127.0.0.1",
     port: 6080,
 });
 
@@ -39,7 +39,7 @@ function websocket_add_listener(client_sock) {
     });
     // end
 }
-// Broadcast to all.
+// 广播.
 server.broadcast = function broadcast(data) {
     server.clients.forEach(function each(client) {
         client.send(data);
