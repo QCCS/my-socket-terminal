@@ -1,0 +1,14 @@
+{
+  "name": "my-socket-terminal",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.3",
+    "koa-route": "^3.2.0",
+    "node-cmd": "^3.0.0",
+    "ws": "^6.1.2"
+  },
+  "devDependencies": {}
+}
