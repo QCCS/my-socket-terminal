@@ -1,13 +1,13 @@
 /**
  * Created by zhouli on 2018/12/12
- * 远程服务，跑在远程服务器
+ * 本地服务，跑在本地电脑
  */
 // 加载node上websocket模块 ws;
 var ws = require("ws");
 var cmd = require('node-cmd');
 // 启动基于websocket的服务器,监听我们的客户端接入进来。
 var server = new ws.Server({
-    // host: "127.0.0.1",
+    host: "127.0.0.1",
     port: 6080,
 });
 
@@ -31,7 +31,7 @@ function websocket_add_listener(client_sock) {
     // 想我们如果是直接基于TCP，我们要自己实现类是于websocket封包协议；
     client_sock.on("message", function(data) {
         console.log(data);
-        client_sock.send("Thank you!");
+        client_sock.send("Thank you! local");
         cmd.get('ls', function(err, out, stderr){
             console.log(out);
             client_sock.send(out);
